@@ -21,6 +21,17 @@ module.exports = (app) => {
         res.redirect('/');
     })
 
+    app.post('/normal/login', (req, res) => {
+        const data = req.body;
+        const userData = userService(data);
+        if(userData !== null){
+            res.send(200, userData);
+        }
+        else{
+            res.send(404, "error");
+        }
+    })
+
 }
 
 
