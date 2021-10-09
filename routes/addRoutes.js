@@ -25,10 +25,10 @@ module.exports = (app) => {
         const data = req.body;
         const userData = userService(data);
         if(userData !== null){
-            res.send(200, userData);
+            res.json(userData);
         }
         else{
-            res.send(404, "error");
+            res.json("error");
         }
     })
 
